@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <title>Invitación Cumpleaños #9: Camila Cortez</title>
     <meta property="og:title" content="¡Te invito a mi Cumpleaños #9! - Camila Cortez">
@@ -19,7 +19,6 @@
             --accent: #b4f0ff;
         }
 
-        /* Quitamos márgenes y fijamos la altura */
         * { box-sizing: border-box; }
         
         body, html {
@@ -28,80 +27,77 @@
             background-color: var(--deep-ocean);
             font-family: 'Montserrat', sans-serif;
             color: white;
-            min-height: 100%;
+            overflow-x: hidden;
         }
 
-        /* FONDO FIJO - Esta capa es la que muestra la foto de Camila */
+        /* CAPA DE FONDO: Forzamos la visualización */
         .background-fixed {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
+            width: 100vw;
             height: 100vh;
-            background-image: url('fondo.jpg'); /* Sin el ./ para máxima compatibilidad */
+            background-image: url('fondo.jpg');
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
-            z-index: -1;
+            z-index: -1; /* Se queda atrás */
         }
 
-        /* Espacio transparente inicial para que la foto se vea limpia */
+        /* Espaciador transparente */
         .hero-spacer {
-            height: 85vh;
+            height: 80vh;
             display: flex;
             align-items: flex-end;
             justify-content: center;
-            padding-bottom: 30px;
+            padding-bottom: 40px;
         }
 
         .scroll-hint {
-            background: rgba(0, 0, 0, 0.6);
-            padding: 12px 24px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 12px 25px;
             border-radius: 30px;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             color: var(--pandora-blue);
             animation: bounce 2s infinite;
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(0, 212, 255, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--pandora-blue);
         }
 
-        /* Área de información que sube al deslizar */
+        /* Contenedor del texto que sube */
         .content-area {
             position: relative;
             z-index: 10;
-            /* Graduación de negro para que el texto se lea bien al subir */
             background: linear-gradient(to top, 
                 rgba(5, 12, 22, 1) 0%, 
-                rgba(5, 12, 22, 0.98) 70%, 
-                rgba(5, 12, 22, 0.7) 90%,
+                rgba(5, 12, 22, 0.98) 85%, 
                 rgba(5, 12, 22, 0) 100%);
             padding: 80px 20px 60px 20px;
             text-align: center;
         }
 
         .details-box {
-            max-width: 420px;
+            max-width: 400px;
             margin: 0 auto;
         }
 
         .highlight {
             color: var(--accent);
             font-weight: 700;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             display: block;
             text-shadow: 0 0 15px var(--pandora-blue);
-            margin-bottom: 10px;
         }
 
         .cinema-info {
-            background: rgba(0, 212, 255, 0.12);
-            border-radius: 18px;
+            background: rgba(0, 212, 255, 0.1);
+            border-radius: 20px;
             padding: 20px;
             margin: 25px 0;
-            font-size: 0.95rem;
-            border: 1px solid rgba(0, 212, 255, 0.25);
+            font-size: 0.9rem;
+            border: 1px solid rgba(0, 212, 255, 0.2);
             line-height: 1.6;
         }
 
@@ -113,27 +109,15 @@
             text-decoration: none;
             border-radius: 50px;
             font-weight: 800;
-            font-size: 1.2rem;
-            margin: 30px auto;
+            font-size: 1.1rem;
+            margin: 20px auto;
             box-shadow: 0 0 25px rgba(0, 212, 255, 0.5);
             text-transform: uppercase;
-            transition: transform 0.2s;
-        }
-
-        .btn-confirm:active {
-            transform: scale(0.95);
         }
 
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-            40% {transform: translateY(-12px);}
-        }
-
-        .footer-nav {
-            font-size: 0.65rem;
-            opacity: 0.5;
-            margin-top: 40px;
-            letter-spacing: 3px;
+            40% {transform: translateY(-10px);}
         }
     </style>
 </head>
@@ -142,24 +126,24 @@
     <div class="background-fixed"></div>
 
     <div class="hero-spacer">
-        <div class="scroll-hint">Desliza para ver la invitación ▽</div>
+        <div class="scroll-hint">Desliza para ver ▽</div>
     </div>
 
     <div class="content-area">
         <div class="details-box">
             <span class="highlight">Jueves 16 de Abril | 17:00 Hrs</span>
-            <p style="font-size: 1.1rem; margin: 10px 0;">📍 <strong>Mega Center (Irpavi)</strong></p>
+            <p style="margin: 10px 0;">📍 <strong>Mega Center (Irpavi)</strong></p>
 
             <div class="cinema-info">
-                🎬 <strong>¡Día de Aventura!</strong><br>
-                Tendremos una función de cine especial. Al terminar, pasaremos al salón para la merienda y el pastel. Estaremos festejando hasta las 20:00.
+                🎬 <strong>¡Misión: Cumpleaños!</strong><br>
+                Tendremos una función de cine y luego pasaremos al salón para la merienda y el pastel. ¡Te espero!
             </div>
 
-            <a href="https://wa.me/59167102521?text=¡Hola!%20Confirmo%20mi%20asistencia%20al%20cumpleaños%20de%20Camila%20Cortez." class="btn-confirm">
+            <a href="https://wa.me/59167102521?text=¡Confirmado!%20Estaré%20en%20el%20cumpleaños%20de%20Camila%20Cortez." class="btn-confirm">
                 Confirmar Asistencia 💬
             </a>
             
-            <p class="footer-nav">OEL NGATI KAMEIE • PANDORA 2026</p>
+            <p style="font-size: 0.6rem; opacity: 0.4; margin-top: 40px; letter-spacing: 2px;">OEL NGATI KAMEIE • PANDORA</p>
         </div>
     </div>
 
