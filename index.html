@@ -19,99 +19,121 @@
             --accent: #b4f0ff;
         }
 
+        /* Quitamos márgenes y fijamos la altura */
+        * { box-sizing: border-box; }
+        
         body, html {
             margin: 0;
             padding: 0;
             background-color: var(--deep-ocean);
             font-family: 'Montserrat', sans-serif;
             color: white;
-            height: 100%;
+            min-height: 100%;
         }
 
-        /* FONDO FIJO - Esta es la parte que muestra tu imagen */
+        /* FONDO FIJO - Esta capa es la que muestra la foto de Camila */
         .background-fixed {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            /* Usamos ./fondo.jpg para asegurar que lo encuentre en la misma carpeta */
-            background-image: url('./fondo.jpg'); 
+            height: 100vh;
+            background-image: url('fondo.jpg'); /* Sin el ./ para máxima compatibilidad */
             background-size: cover;
-            background-position: center;
+            background-position: center center;
+            background-repeat: no-repeat;
             z-index: -1;
         }
 
-        /* Espacio para que se vea solo la foto al inicio */
+        /* Espacio transparente inicial para que la foto se vea limpia */
         .hero-spacer {
-            height: 80vh;
+            height: 85vh;
             display: flex;
             align-items: flex-end;
             justify-content: center;
+            padding-bottom: 30px;
         }
 
         .scroll-hint {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-size: 0.7rem;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             color: var(--pandora-blue);
             animation: bounce 2s infinite;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(0, 212, 255, 0.3);
         }
 
-        /* Área de letras que sube */
+        /* Área de información que sube al deslizar */
         .content-area {
             position: relative;
+            z-index: 10;
+            /* Graduación de negro para que el texto se lea bien al subir */
             background: linear-gradient(to top, 
                 rgba(5, 12, 22, 1) 0%, 
-                rgba(5, 12, 22, 0.98) 80%, 
+                rgba(5, 12, 22, 0.98) 70%, 
+                rgba(5, 12, 22, 0.7) 90%,
                 rgba(5, 12, 22, 0) 100%);
-            padding: 60px 20px 40px 20px;
+            padding: 80px 20px 60px 20px;
             text-align: center;
         }
 
         .details-box {
-            max-width: 400px;
+            max-width: 420px;
             margin: 0 auto;
         }
 
         .highlight {
             color: var(--accent);
             font-weight: 700;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             display: block;
             text-shadow: 0 0 15px var(--pandora-blue);
-            margin-bottom: 5px;
+            margin-bottom: 10px;
         }
 
         .cinema-info {
-            background: rgba(0, 212, 255, 0.1);
-            border-radius: 15px;
-            padding: 15px;
-            margin: 20px 0;
-            font-size: 0.9rem;
-            border: 1px solid rgba(0, 212, 255, 0.2);
+            background: rgba(0, 212, 255, 0.12);
+            border-radius: 18px;
+            padding: 20px;
+            margin: 25px 0;
+            font-size: 0.95rem;
+            border: 1px solid rgba(0, 212, 255, 0.25);
+            line-height: 1.6;
         }
 
         .btn-confirm {
             display: block;
             background: var(--pandora-blue);
             color: var(--deep-ocean);
-            padding: 18px;
+            padding: 20px;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 800;
-            font-size: 1.1rem;
-            margin: 20px auto;
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+            font-size: 1.2rem;
+            margin: 30px auto;
+            box-shadow: 0 0 25px rgba(0, 212, 255, 0.5);
+            text-transform: uppercase;
+            transition: transform 0.2s;
+        }
+
+        .btn-confirm:active {
+            transform: scale(0.95);
         }
 
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-            40% {transform: translateY(-10px);}
+            40% {transform: translateY(-12px);}
+        }
+
+        .footer-nav {
+            font-size: 0.65rem;
+            opacity: 0.5;
+            margin-top: 40px;
+            letter-spacing: 3px;
         }
     </style>
 </head>
@@ -120,24 +142,24 @@
     <div class="background-fixed"></div>
 
     <div class="hero-spacer">
-        <div class="scroll-hint">Desliza para leer ▽</div>
+        <div class="scroll-hint">Desliza para ver la invitación ▽</div>
     </div>
 
     <div class="content-area">
         <div class="details-box">
             <span class="highlight">Jueves 16 de Abril | 17:00 Hrs</span>
-            <p>📍 <strong>Mega Center (Irpavi)</strong></p>
+            <p style="font-size: 1.1rem; margin: 10px 0;">📍 <strong>Mega Center (Irpavi)</strong></p>
 
             <div class="cinema-info">
-                🎬 <strong>¡Función especial!</strong><br>
-                Terminada la película, pasaremos al salón para la merienda y el pastel. Estaremos hasta las 20:00.
+                🎬 <strong>¡Día de Aventura!</strong><br>
+                Tendremos una función de cine especial. Al terminar, pasaremos al salón para la merienda y el pastel. Estaremos festejando hasta las 20:00.
             </div>
 
             <a href="https://wa.me/59167102521?text=¡Hola!%20Confirmo%20mi%20asistencia%20al%20cumpleaños%20de%20Camila%20Cortez." class="btn-confirm">
                 Confirmar Asistencia 💬
             </a>
             
-            <p style="font-size: 0.6rem; opacity: 0.5; margin-top: 30px;">OEL NGATI KAMEIE • PANDORA 2026</p>
+            <p class="footer-nav">OEL NGATI KAMEIE • PANDORA 2026</p>
         </div>
     </div>
 
