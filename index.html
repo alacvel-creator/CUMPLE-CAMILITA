@@ -7,7 +7,7 @@
     <title>Invitación Cumpleaños #9: Camila Cortez</title>
     <meta property="og:title" content="¡Te invito a mi Cumpleaños #9! - Camila Cortez">
     <meta property="og:description" content="Jueves 16 de Abril | Mega Center Irpavi">
-    <meta property="og:image" content="fondo.jpg">
+    <meta property="og:image" content="https://cumple-camilita-wl6f.vercel.app/fondo.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:type" content="website">
@@ -36,7 +36,8 @@
         .card {
             width: 100%;
             max-width: 450px;
-            background-image: url('./fondo.jpg'); 
+            /* URL completa para asegurar la carga en todos los dispositivos */
+            background-image: url('https://cumple-camilita-wl6f.vercel.app/fondo.jpg'); 
             background-size: cover;
             background-position: center;
             height: 95vh;
@@ -46,7 +47,7 @@
             position: relative;
             display: flex;
             flex-direction: column;
-            justify-content: flex-end; /* Empuja todo el texto hacia abajo */
+            justify-content: flex-end;
             overflow: hidden;
             margin: 10px;
         }
@@ -54,7 +55,7 @@
         .overlay-bottom {
             background: linear-gradient(to top, 
                 rgba(5, 12, 22, 1) 0%, 
-                rgba(5, 12, 22, 0.9) 60%, 
+                rgba(5, 12, 22, 0.95) 60%, 
                 rgba(5, 12, 22, 0) 100%);
             padding: 40px 25px 30px 25px;
             text-align: center;
@@ -82,6 +83,7 @@
             font-size: 0.9rem;
             border: 1px solid rgba(0, 212, 255, 0.3);
             line-height: 1.4;
+            text-align: left;
         }
 
         .btn-confirm {
@@ -101,8 +103,8 @@
         }
 
         .btn-confirm:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px var(--pandora-blue);
+            transform: scale(1.02);
+            box-shadow: 0 0 35px var(--pandora-blue);
         }
 
         .footer-quote {
@@ -123,14 +125,14 @@
             </div>
 
             <div class="cinema-info">
-                🍿 🎬 <strong>Programa:</strong> Terminada la función, pasaremos al salón para la merienda y el pastel. Estaremos hasta las 20:00.
+                🍿 🎬 <strong>Misión Pandora:</strong> Terminada la función, pasaremos al salón para la merienda y el pastel. Estaremos hasta las 20:00.
             </div>
 
             <a href="https://wa.me/59167102521?text=¡Hola!%20Confirmo%20mi%20asistencia%20al%20cumpleaños%20de%20Camila%20Cortez.%20¡Ahí%20nos%20vemos!" class="btn-confirm">
                 Confirmar Asistencia 💬
             </a>
             
-            <p class="footer-quote">"Oel ngati kameie" - Te veo en Pandora</p>
+            <p class="footer-quote">"Oel ngati kameie" - Te veo en el cine</p>
         </div>
     </div>
 
