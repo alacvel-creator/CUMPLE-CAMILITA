@@ -7,9 +7,7 @@
     <title>Invitación Cumpleaños #9: Camila Cortez</title>
     <meta property="og:title" content="¡Te invito a mi Cumpleaños #9! - Camila Cortez">
     <meta property="og:description" content="Jueves 16 de Abril | Mega Center Irpavi">
-    <meta property="og:image" content="https://cumple-camilita-wl6f.vercel.app/fondo.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <meta property="og:image" content="https://cumple-camilita.vercel.app/fondo.jpg">
     <meta property="og:type" content="website">
 
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
@@ -36,8 +34,7 @@
         .card {
             width: 100%;
             max-width: 450px;
-            /* URL completa para asegurar la carga en todos los dispositivos */
-            background-image: url('https://cumple-camilita-wl6f.vercel.app/fondo.jpg'); 
+            background-image: url('https://cumple-camilita.vercel.app/fondo.jpg'); 
             background-size: cover;
             background-position: center;
             height: 95vh;
@@ -47,42 +44,44 @@
             position: relative;
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
+            /* Empujamos todo el contenido al puro fondo */
+            justify-content: flex-end; 
             overflow: hidden;
             margin: 10px;
         }
 
         .overlay-bottom {
+            /* Degradado más alto y oscuro para proteger el texto abajo */
             background: linear-gradient(to top, 
                 rgba(5, 12, 22, 1) 0%, 
-                rgba(5, 12, 22, 0.95) 60%, 
+                rgba(5, 12, 22, 0.98) 50%, 
                 rgba(5, 12, 22, 0) 100%);
-            padding: 40px 25px 30px 25px;
+            padding: 20px 25px 25px 25px;
             text-align: center;
         }
 
         .details {
-            font-size: 1.1rem;
-            line-height: 1.5;
-            margin-bottom: 15px;
+            font-size: 1rem;
+            line-height: 1.4;
+            margin-bottom: 10px;
         }
 
         .highlight {
             color: var(--accent);
             font-weight: 700;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             display: block;
             text-shadow: 0 0 10px var(--pandora-blue);
         }
 
         .cinema-info {
-            background: rgba(0, 212, 255, 0.15);
-            border-radius: 12px;
-            padding: 15px;
-            margin: 15px 0;
-            font-size: 0.9rem;
-            border: 1px solid rgba(0, 212, 255, 0.3);
-            line-height: 1.4;
+            background: rgba(0, 212, 255, 0.1);
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 0.85rem;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            line-height: 1.3;
             text-align: left;
         }
 
@@ -90,27 +89,21 @@
             display: block;
             background: var(--pandora-blue);
             color: var(--deep-ocean);
-            padding: 18px;
+            padding: 15px;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 800;
-            font-size: 1.1rem;
-            margin-top: 15px;
+            font-size: 1rem;
+            margin-top: 10px;
             transition: 0.3s;
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
             text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .btn-confirm:hover {
-            transform: scale(1.02);
-            box-shadow: 0 0 35px var(--pandora-blue);
         }
 
         .footer-quote {
-            font-size: 0.75rem;
-            margin-top: 20px;
-            opacity: 0.7;
+            font-size: 0.7rem;
+            margin-top: 15px;
+            opacity: 0.6;
             font-style: italic;
         }
     </style>
@@ -125,10 +118,10 @@
             </div>
 
             <div class="cinema-info">
-                🍿 🎬 <strong>Misión Pandora:</strong> Terminada la función, pasaremos al salón para la merienda y el pastel. Estaremos hasta las 20:00.
+                🎬 <strong>Programa:</strong> Función de cine, merienda y pastel en el salón. Estaremos hasta las 20:00.
             </div>
 
-            <a href="https://wa.me/59167102521?text=¡Hola!%20Confirmo%20mi%20asistencia%20al%20cumpleaños%20de%20Camila%20Cortez.%20¡Ahí%20nos%20vemos!" class="btn-confirm">
+            <a href="https://wa.me/59167102521?text=¡Hola!%20Confirmo%20mi%20asistencia%20al%20cumpleaños%20de%20Camila%20Cortez" class="btn-confirm">
                 Confirmar Asistencia 💬
             </a>
             
