@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Invitación Cumpleaños #9: Camila Cortez</title>
+    <meta property="og:title" content="¡Te invito a mi Cumpleaños #9! - Camila Cortez">
+    <meta property="og:description" content="Jueves 16 de Abril | Mega Center Irpavi">
+    <meta property="og:image" content="fondo.jpg"> <meta property="og:type" content="website">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --pandora-blue: #00d4ff;
+            --deep-ocean: #050c16;
+            --accent: #b4f0ff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--deep-ocean);
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 450px;
+            background-image: url('fondo.jpg'); /* AQUÍ SE CARGA TU IMAGEN */
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+            border-radius: 20px;
+            border: 2px solid var(--pandora-blue);
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+            margin: 10px;
+        }
+
+        /* Degradado para que el texto sea legible sobre la imagen */
+        .overlay-top {
+            background: linear-gradient(to bottom, rgba(5, 12, 22, 0.8) 0%, rgba(5, 12, 22, 0) 100%);
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .overlay-bottom {
+            background: linear-gradient(to top, rgba(5, 12, 22, 0.9) 30%, rgba(5, 12, 22, 0) 100%);
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            color: var(--pandora-blue);
+            margin: 0;
+            text-shadow: 0 0 10px var(--pandora-blue);
+        }
+
+        .details {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .btn-confirm {
+            display: inline-block;
+            background: rgba(0, 212, 255, 0.2);
+            color: white;
+            border: 2px solid var(--pandora-blue);
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: 0.3s;
+            backdrop-filter: blur(5px);
+        }
+
+        .btn-confirm:hover {
+            background: var(--pandora-blue);
+            color: var(--deep-ocean);
+        }
+
+        .cinema-info {
+            background: rgba(0, 212, 255, 0.1);
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 0.85rem;
+            border-left: 4px solid var(--pandora-blue);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="overlay-top">
+            <h1>Camila Cortez</h1>
+            <p style="margin: 5px 0; letter-spacing: 2px;">¡MI CUMPLEAÑOS #9!</p>
+        </div>
+
+        <div class="overlay-bottom">
+            <div class="details">
+                <span class="highlight">Jueves 16 de Abril | 17:00 Hrs</span><br>
+                📍 <strong>Mega Center (Zona Irpavi)</strong>
+            </div>
+
+            <div class="cinema-info">
+                🎬 Terminada la función, pasaremos al salón para una merienda y cantaremos el feliz cumpleaños hasta las 20:00.
+            </div>
+
+            <a href="https://wa.me/59167102521?text=¡Hola!%20Confirmo%20asistencia%20al%20cumpleaños%20de%20Camila%20Cortez" class="btn-confirm">
+                CONFIRMAR AL +591 67102521
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
