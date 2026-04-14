@@ -29,6 +29,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            cursor: pointer;
         }
 
         .card {
@@ -44,9 +45,28 @@
             position: relative;
             display: flex;
             flex-direction: column;
-            justify-content: flex-end; /* Empuja todo el texto hacia abajo */
+            justify-content: flex-end;
             overflow: hidden;
             margin: 10px;
+        }
+
+        /* Botón de música */
+        #music-control {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            background: rgba(0, 212, 255, 0.3);
+            border: 1px solid var(--pandora-blue);
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
         }
 
         .overlay-bottom {
@@ -56,12 +76,6 @@
                 rgba(5, 12, 22, 0) 100%);
             padding: 40px 25px 30px 25px;
             text-align: center;
-        }
-
-        .details {
-            font-size: 1.1rem;
-            line-height: 1.5;
-            margin-bottom: 15px;
         }
 
         .highlight {
@@ -79,7 +93,6 @@
             margin: 15px 0;
             font-size: 0.9rem;
             border: 1px solid rgba(0, 212, 255, 0.3);
-            line-height: 1.4;
         }
 
         .btn-confirm {
@@ -92,26 +105,24 @@
             font-weight: 800;
             font-size: 1.1rem;
             margin-top: 15px;
-            transition: 0.3s;
             box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
             text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .btn-confirm:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px var(--pandora-blue);
         }
 
         .footer-quote {
             font-size: 0.75rem;
             margin-top: 20px;
             opacity: 0.7;
-            font-style: italic;
         }
     </style>
 </head>
-<body>
+<body onclick="playMusic()">
+
+    <audio id="avatarAudio" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        </audio>
+
+    <div id="music-control">🎵</div>
 
     <div class="card">
         <div class="overlay-bottom">
@@ -124,13 +135,45 @@
                 🍿 🎬 <strong>Programa:</strong> Terminada la función, pasaremos al salón para la merienda y el pastel. Estaremos hasta las 20:00.
             </div>
 
-            <a href="https://wa.me/59167102521?text=¡Hola!%20Confirmo%20mi%20asistencia%20al%20cumpleaños%20de%20Camila%20Cortez.%20¡Ahí%20nos%20vemos!" class="btn-confirm">
+            <a href="https://wa.me/59167102521?text=¡Hola!%20Confirmo%20mi%20asistencia%20al%20cumpleaños%20de%20Camila%20Cortez." class="btn-confirm">
                 Confirmar Asistencia 💬
             </a>
             
             <p class="footer-quote">"Oel ngati kameie" - Te veo en Pandora</p>
         </div>
     </div>
+
+    <script>
+        var audio = document.getElementById("avatarAudio");
+        var musicControl = document.getElementById("music-control");
+        var isPlaying = false;
+
+        function playMusic() {
+            if (!isPlaying) {
+                audio.play();
+                isPlaying = true;
+                musicControl.style.animation = "spin 3s linear infinite";
+            }
+        }
+
+        musicControl.onclick = function(e) {
+            e.stopPropagation(); // Evita que el clic en el botón active el body
+            if (isPlaying) {
+                audio.pause();
+                isPlaying = false;
+            } else {
+                audio.play();
+                isPlaying = true;
+            }
+        };
+    </script>
+
+    <style>
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
 
 </body>
 </html>
