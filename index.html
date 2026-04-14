@@ -34,96 +34,86 @@
         .card {
             width: 100%;
             max-width: 450px;
-            /* El punto y la barra antes del nombre aseguran que busque en la misma carpeta */
             background-image: url('./fondo.jpg'); 
             background-size: cover;
             background-position: center;
             height: 95vh;
             border-radius: 20px;
             border: 2px solid var(--pandora-blue);
-            box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.6);
             position: relative;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: flex-end; /* Empuja todo el texto hacia abajo */
             overflow: hidden;
             margin: 10px;
         }
 
-        .overlay-top {
-            background: linear-gradient(to bottom, rgba(5, 12, 22, 0.85) 0%, rgba(5, 12, 22, 0) 100%);
-            padding: 35px 20px;
-            text-align: center;
-        }
-
         .overlay-bottom {
-            background: linear-gradient(to top, rgba(5, 12, 22, 0.95) 40%, rgba(5, 12, 22, 0) 100%);
-            padding: 40px 20px;
+            background: linear-gradient(to top, 
+                rgba(5, 12, 22, 1) 0%, 
+                rgba(5, 12, 22, 0.9) 60%, 
+                rgba(5, 12, 22, 0) 100%);
+            padding: 40px 25px 30px 25px;
             text-align: center;
-        }
-
-        h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 2rem;
-            color: var(--pandora-blue);
-            margin: 0;
-            text-shadow: 0 0 15px var(--pandora-blue);
         }
 
         .details {
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
         }
 
         .highlight {
             color: var(--accent);
             font-weight: 700;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             display: block;
-            margin-bottom: 5px;
-        }
-
-        .btn-confirm {
-            display: inline-block;
-            background: rgba(0, 212, 255, 0.2);
-            color: white;
-            border: 2px solid var(--pandora-blue);
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            margin-top: 15px;
-            transition: 0.3s;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
-        }
-
-        .btn-confirm:hover {
-            background: var(--pandora-blue);
-            color: var(--deep-ocean);
-            box-shadow: 0 0 30px var(--pandora-blue);
+            text-shadow: 0 0 10px var(--pandora-blue);
         }
 
         .cinema-info {
-            background: rgba(0, 212, 255, 0.1);
+            background: rgba(0, 212, 255, 0.15);
             border-radius: 12px;
-            padding: 12px;
+            padding: 15px;
             margin: 15px 0;
             font-size: 0.9rem;
-            border-left: 5px solid var(--pandora-blue);
-            text-align: left;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            line-height: 1.4;
+        }
+
+        .btn-confirm {
+            display: block;
+            background: var(--pandora-blue);
+            color: var(--deep-ocean);
+            padding: 18px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            margin-top: 15px;
+            transition: 0.3s;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-confirm:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px var(--pandora-blue);
+        }
+
+        .footer-quote {
+            font-size: 0.75rem;
+            margin-top: 20px;
+            opacity: 0.7;
+            font-style: italic;
         }
     </style>
 </head>
 <body>
 
     <div class="card">
-        <div class="overlay-top">
-            <h1>Camila Cortez</h1>
-            <p style="margin: 8px 0; letter-spacing: 3px; font-weight: 300;">¡MI CUMPLEAÑOS #9!</p>
-        </div>
-
         <div class="overlay-bottom">
             <div class="details">
                 <span class="highlight">Jueves 16 de Abril | 17:00 Hrs</span>
@@ -131,16 +121,14 @@
             </div>
 
             <div class="cinema-info">
-                🎬 Terminada la función, pasaremos al salón para una merienda y cantaremos el feliz cumpleaños hasta las 20:00.
+                🍿 🎬 <strong>Programa:</strong> Terminada la función, pasaremos al salón para la merienda y el pastel. Estaremos hasta las 20:00.
             </div>
 
-            <a href="https://wa.me/59167102521?text=¡Hola!%20Confirmo%20asistencia%20al%20cumpleaños%20de%20Camila%20Cortez" class="btn-confirm">
-                CONFIRMAR ASISTENCIA 💬
+            <a href="https://wa.me/59167102521?text=¡Hola!%20Confirmo%20mi%20asistencia%20al%20cumpleaños%20de%20Camila%20Cortez.%20¡Ahí%20nos%20vemos!" class="btn-confirm">
+                Confirmar Asistencia 💬
             </a>
             
-            <p style="font-size: 0.7rem; margin-top: 15px; opacity: 0.6;">
-                "Oel ngati kameie" - Te veo en Pandora
-            </p>
+            <p class="footer-quote">"Oel ngati kameie" - Te veo en Pandora</p>
         </div>
     </div>
 
