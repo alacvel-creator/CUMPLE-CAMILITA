@@ -7,7 +7,8 @@
     <title>Invitación Cumpleaños #9: Camila Cortez</title>
     <meta property="og:title" content="¡Te invito a mi Cumpleaños #9! - Camila Cortez">
     <meta property="og:description" content="Jueves 16 de Abril | Mega Center Irpavi">
-    <meta property="og:image" content="fondo.jpg"> <meta property="og:type" content="website">
+    <meta property="og:image" content="./fondo.jpg">
+    <meta property="og:type" content="website">
 
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     
@@ -33,10 +34,11 @@
         .card {
             width: 100%;
             max-width: 450px;
-            background-image: url('fondo.jpg'); /* AQUÍ SE CARGA TU IMAGEN */
+            /* El punto y la barra antes del nombre aseguran que busque en la misma carpeta */
+            background-image: url('./fondo.jpg'); 
             background-size: cover;
             background-position: center;
-            height: 90vh;
+            height: 95vh;
             border-radius: 20px;
             border: 2px solid var(--pandora-blue);
             box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
@@ -48,37 +50,38 @@
             margin: 10px;
         }
 
-        /* Degradado para que el texto sea legible sobre la imagen */
         .overlay-top {
-            background: linear-gradient(to bottom, rgba(5, 12, 22, 0.8) 0%, rgba(5, 12, 22, 0) 100%);
-            padding: 30px 20px;
+            background: linear-gradient(to bottom, rgba(5, 12, 22, 0.85) 0%, rgba(5, 12, 22, 0) 100%);
+            padding: 35px 20px;
             text-align: center;
         }
 
         .overlay-bottom {
-            background: linear-gradient(to top, rgba(5, 12, 22, 0.9) 30%, rgba(5, 12, 22, 0) 100%);
-            padding: 30px 20px;
+            background: linear-gradient(to top, rgba(5, 12, 22, 0.95) 40%, rgba(5, 12, 22, 0) 100%);
+            padding: 40px 20px;
             text-align: center;
         }
 
         h1 {
             font-family: 'Cinzel', serif;
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: var(--pandora-blue);
             margin: 0;
-            text-shadow: 0 0 10px var(--pandora-blue);
+            text-shadow: 0 0 15px var(--pandora-blue);
         }
 
         .details {
-            font-size: 0.95rem;
-            line-height: 1.5;
-            margin-bottom: 15px;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
         }
 
         .highlight {
             color: var(--accent);
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 5px;
         }
 
         .btn-confirm {
@@ -86,27 +89,30 @@
             background: rgba(0, 212, 255, 0.2);
             color: white;
             border: 2px solid var(--pandora-blue);
-            padding: 12px 25px;
+            padding: 15px 30px;
             text-decoration: none;
-            border-radius: 30px;
+            border-radius: 50px;
             font-weight: bold;
-            margin-top: 10px;
+            margin-top: 15px;
             transition: 0.3s;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
         }
 
         .btn-confirm:hover {
             background: var(--pandora-blue);
             color: var(--deep-ocean);
+            box-shadow: 0 0 30px var(--pandora-blue);
         }
 
         .cinema-info {
             background: rgba(0, 212, 255, 0.1);
-            border-radius: 10px;
-            padding: 10px;
-            margin: 10px 0;
-            font-size: 0.85rem;
-            border-left: 4px solid var(--pandora-blue);
+            border-radius: 12px;
+            padding: 12px;
+            margin: 15px 0;
+            font-size: 0.9rem;
+            border-left: 5px solid var(--pandora-blue);
+            text-align: left;
         }
     </style>
 </head>
@@ -115,13 +121,13 @@
     <div class="card">
         <div class="overlay-top">
             <h1>Camila Cortez</h1>
-            <p style="margin: 5px 0; letter-spacing: 2px;">¡MI CUMPLEAÑOS #9!</p>
+            <p style="margin: 8px 0; letter-spacing: 3px; font-weight: 300;">¡MI CUMPLEAÑOS #9!</p>
         </div>
 
         <div class="overlay-bottom">
             <div class="details">
-                <span class="highlight">Jueves 16 de Abril | 17:00 Hrs</span><br>
-                📍 <strong>Mega Center (Zona Irpavi)</strong>
+                <span class="highlight">Jueves 16 de Abril | 17:00 Hrs</span>
+                📍 <strong>Mega Center (Irpavi)</strong>
             </div>
 
             <div class="cinema-info">
@@ -129,8 +135,12 @@
             </div>
 
             <a href="https://wa.me/59167102521?text=¡Hola!%20Confirmo%20asistencia%20al%20cumpleaños%20de%20Camila%20Cortez" class="btn-confirm">
-                CONFIRMAR AL +591 67102521
+                CONFIRMAR ASISTENCIA 💬
             </a>
+            
+            <p style="font-size: 0.7rem; margin-top: 15px; opacity: 0.6;">
+                "Oel ngati kameie" - Te veo en Pandora
+            </p>
         </div>
     </div>
 
